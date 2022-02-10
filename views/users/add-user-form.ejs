@@ -1,0 +1,14 @@
+<%- include('../includes/head.ejs') %>
+
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+    <main>
+        <form action='/add-user' method='POST'>
+            <input placeholder='enter name' type='text' name='name'>
+            <input placeholder='enter Email' type='text' name='emailId' >
+            <button type='submit'>Add user</button>
+        </form>
+    </main>
+<%- include('../includes/end.ejs') %>

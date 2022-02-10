@@ -1,0 +1,25 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/product.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+            <main>
+                <% if (prods.length > 0) { %>
+                    <div >
+                        <% for (let user of prods) { %>
+                            <section>
+                                <div>
+                                   <p> <%= user.name %></p>
+                                   <p> <%= user.emailId %></p>
+                                   <a href="/users/<%= user.id %>">Details</a>
+                                   <hr />
+                                </div>
+                            </section>
+                            <% } %>
+                    </div>
+                    <% } else { %>
+                        <h1>No Users Found!</h1>
+                        <% } %>
+            </main>
+            <%- include('../includes/end.ejs') %>
