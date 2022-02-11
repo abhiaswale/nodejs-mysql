@@ -12,6 +12,12 @@ router.post("/add-user", userControllers.addUser); //CREATE
 //GET ALL USERS IN DB
 router.get("/users", userControllers.getUsers); //READ
 
+//GET UPDATE PRODUCT
+router.get("/users/edit-user/:userId", userControllers.getEditUser);
+
+//UPDATING THE PRODUCT
+router.post("/update-user", userControllers.postUpdateProduct); //UPDATE
+
 //GET DETAILS OF PARTICULAR USER
 router.get("/users/:userId", userControllers.getUser);
 

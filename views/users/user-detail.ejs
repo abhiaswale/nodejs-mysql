@@ -8,9 +8,12 @@
             <hr>
             <h2><%= user.name %></h2>
             <p><%= user.emailId %></p>
+            
             <form  action="/delete-user" method="POST">
                 <input type="hidden" value ="<%=user.id %>" name="userId">
                 <button type="submit">Delete user</button>
             </form>
         </main>
         <%- include('../includes/end.ejs') %>
+                                                
+

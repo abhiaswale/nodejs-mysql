@@ -5,10 +5,13 @@
 <body>
    <%- include('../includes/navigation.ejs') %>
     <main>
-        <form action='/add-user' method='POST'>
-            <input placeholder='enter name' type='text' name='name'>
-            <input placeholder='enter Email' type='text' name='emailId' >
-            <button type='submit'>Add user</button>
+        <form action='/<% if (editing) { %>update-user<% } else { %>add-user<% } %>' method='POST'>
+            <input placeholder='enter name' type='text' name='name' value="<% if (editing) { %><%=user.name %><% } %>">
+            <input placeholder='enter Email' type='text' name='emailId' value="<% if (editing) { %><%= user.emailId%><% } %>" >
+            <% if (editing) { %>
+                <input type="hidden" value="<%=user.id %>" name="userId">
+            <% } %>
+            <button type='submit'><% if (editing) { %>Update User  <%=user.id %><% } else { %>Add User<% } %></button>
         </form>
     </main>
 <%- include('../includes/end.ejs') %>

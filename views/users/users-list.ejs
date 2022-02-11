@@ -12,6 +12,7 @@
                                 <div>
                                    <p> <%= user.name %></p>
                                    <p> <%= user.emailId %></p>
+                                   <a href="/users/edit-user/<%=user.id%>?edit=true">Edit</a>
                                    <a href="/users/<%= user.id %>">Details</a>
                                    <hr />
                                 </div>
